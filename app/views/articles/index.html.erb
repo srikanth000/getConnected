@@ -13,6 +13,10 @@
 				</div>
 				<div class="article-body">
 					<%= truncate(article.description,length:100)%>
+				<div class="article-meta-tags">
+					<small> Created by <%=article.user.username if article.user%>,<%= time_ago_in_words(article.created_at)%>,last updated by <%= time_ago_in_words(article.updated_at)%>
+					</small>
+				</div>
 				</div>
 				<div class="article-actions">
 
