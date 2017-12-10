@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+	before_action :set_articles, only: [:edit, :update,:show,:destroy]
 	def index
 		@article=Article.all
 	end
@@ -43,6 +44,9 @@ class ArticlesController < ApplicationController
 
 
 	private
+		def set_articles
+			@article=Article.find(params[:id])
+		end
 
 		def article_params
 
