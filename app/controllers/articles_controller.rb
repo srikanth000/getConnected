@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 	before_action :set_articles, only: [:edit, :update,:show,:destroy]
 	def index
+		#debugger
 		@article=Article.all
 	end
 
