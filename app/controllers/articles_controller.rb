@@ -1,8 +1,9 @@
+require 'will_paginate/array'
 class ArticlesController < ApplicationController
 	before_action :set_articles, only: [:edit, :update,:show,:destroy]
 	def index
 		#debugger
-		@article=Article.all
+		@article=Article.paginate(page:params[:page],per_page:5)
 	end
 
 	def new
